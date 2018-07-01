@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, Injector } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { SessionService } from '../providers/user-service';
@@ -14,6 +14,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { JWTService } from '../providers/jwt-service';
+import { RequestsInterceptor } from '../providers/interceptor';
 
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -52,9 +55,11 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [
     StatusBar,
     SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
     SessionService,
     TripService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    JWTService,
+    {provide: HTTP_INTERCEPTORS, useClass: RequestsInterceptor, multi: true, deps: [Injector] }
   ]
 })
 export class AppModule {}
