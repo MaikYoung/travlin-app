@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 
 import { HomePage } from '../pages/home/home';
@@ -25,10 +24,8 @@ export class MyApp {
     public platform: Platform, 
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen,
-    public db: AngularFirestore
   ) {
     this.initializeApp();
-    this.items = db.collection('items').valueChanges();
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },

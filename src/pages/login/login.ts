@@ -27,7 +27,4 @@ export class LoginPage {
     
   }
 
-  login(){
-    // this.sessionService.signInWithFacebook();
-  }
 }

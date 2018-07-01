@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 
-export class SessionService {
+export class TripService {
 
     constructor(
     ) { }
