@@ -1,16 +1,14 @@
-// http://ionicframework.com/docs/theming/
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Caveat');
+
+//colors
+$color-extra-lightgreen:#F0F7D4;
+$color-lightgreen:#B2D732;
+$color-green:#66B032;
+$color-blue:#347B98;
+$color-darkblue:#092834;
 
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+//fonts
+$font-primary: 'Fira Sans Condensed', sans-serif;
+$font-secondary: 'Caveat', cursive;
