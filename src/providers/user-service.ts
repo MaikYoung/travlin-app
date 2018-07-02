@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { TokenService } from './token-service';
+import { APIService } from './api-service';
 
+import 'rxjs/add/operator/do';
 
-export class SessionService {
+@Injectable()
+export class SessionService extends APIService{
 
     constructor(
-    ) { }
+      protected http: HttpClient, 
+      protected tokenService: TokenService
+    ) 
+    { 
+      super(http);
+    }
   
   
   
