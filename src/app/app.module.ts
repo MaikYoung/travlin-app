@@ -14,10 +14,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import { ComponentsModule } from '../components/components.module';
 import { JWTService } from '../providers/jwt-service';
 import { RequestsInterceptor } from '../providers/interceptor';
-
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
@@ -44,6 +43,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     HttpClientModule,
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
