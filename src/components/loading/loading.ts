@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LoadingController } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
 
 /**
  * Generated class for the LoadingComponent component.
@@ -11,9 +13,17 @@ import { Component } from '@angular/core';
   templateUrl: 'loading.html'
 })
 export class LoadingComponent {
-
-
-  constructor() {
+  translations:any;
+  constructor(
+    public loadingCtrl: LoadingController,
+    private translate: TranslateService,
+  ) {
+    this.translate.get(["loading"]).subscribe(values => this.translations = values)
+    const loading = this.loadingCtrl.create({
+      spinner: 'bubbles',
+      content: this.translations['loading'],
+    });
+    loading.present();
   }
 
 }

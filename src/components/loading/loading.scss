@@ -1,3 +1,8 @@
-loading {
-
+.loading-ios .loading-wrapper {
+    border-radius: 8px;
+    max-width: 270px;
+    max-height: 90%;
+    color: $color-one;
+    background: $color-five;
+    padding: 23px 34px;
 }
